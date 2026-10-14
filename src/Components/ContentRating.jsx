@@ -5,7 +5,6 @@ class ContentRating extends Component {
   state = {
     likes: 0,
     dislikes: 0,
-    
   };
 
   handleLike = () => {
@@ -21,6 +20,8 @@ class ContentRating extends Component {
   };
 
   render() {
+    const { likes, dislikes } = this.state;
+    const totalRatings = likes + dislikes;
     return (
       <div className="content-rating">
         <p>Approving the Content of the Code</p>
@@ -32,6 +33,7 @@ class ContentRating extends Component {
             Dislike ({this.state.dislikes})
           </button>
         </div>
+        <p className="total-ratings">Total ratings: {totalRatings}</p>
       </div>
     );
   }
